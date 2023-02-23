@@ -51,7 +51,8 @@ def upload_file():
         text = ""
         for page in reader.pages:
             text += page.extract_text() + "\n"
-        pattern = r"(CM[0-9]+)\s+(.*?)(?=\s*CM|\s*CodMidia Titulo_Anterior)"
+        print(text)
+        pattern = r"(CM[0-9]+)\s+(.*?)(?=\s*CM|\s*CodMidia Titulo_Anterior|\s*Page)"
         cmDict = {}
         result = re.findall(pattern, text, re.DOTALL)
         for match in result:
